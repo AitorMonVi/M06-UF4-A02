@@ -5,6 +5,6 @@ CREATE TABLE IF NOT EXISTS llibre (
     editorial VARCHAR(255),
     datapublicacio DATE,
     tematica VARCHAR(100),
-    ISBN VARCHAR(13) UNIQUE NOT NULL,
+    ISBN VARCHAR(17) UNIQUE NOT NULL,
     PRIMARY KEY (id_Llibre)
 );

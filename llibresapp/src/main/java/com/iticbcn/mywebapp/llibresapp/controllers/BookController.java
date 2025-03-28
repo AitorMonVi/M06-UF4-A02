@@ -74,7 +74,7 @@ public class BookController {
         try {
             fecha = LocalDate.parse(datapublicacio);
         } catch (Exception e) {
-            message = "La fecha que has aportado es incorrecta";
+            message = "La fecha que has aportado es incorrecta utiliza formato (YYYY-MM-DD)";
             llibreErr = true;
 
             model.addAttribute("message", message);
@@ -82,7 +82,9 @@ public class BookController {
             return "inserir";
         }
 
-        if (!service.validateISBN(isbn)) {
+        try {
+            service.validateISBN(isbn);
+        } catch (Exception e) {
             message = "El ISBN que has aportado es incorrecto";
             llibreErr = true;
 
@@ -119,8 +121,6 @@ public class BookController {
             return "inserir";
         }
 
-        System.out.println("Libro creado correctamente");
-
         Set<Llibre> llibres = service.findAll();
         model.addAttribute("llibres", llibres);
 
@@ -140,7 +140,7 @@ public class BookController {
     }
 
     @PostMapping("/cercaid")
-    public String cercaId(@RequestParam(name = "idLlibre", required = false) String idLlibre, 
+    public String cercaId(@RequestParam(name = "id_Llibre", required = false) String idLlibre, 
                            Model model) {
         int id_Llibre = 0;
         String message = "";

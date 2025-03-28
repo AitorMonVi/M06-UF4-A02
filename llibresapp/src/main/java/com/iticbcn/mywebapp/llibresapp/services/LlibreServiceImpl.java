@@ -40,9 +40,8 @@ public class LlibreServiceImpl implements LlibreService {
     }
 
     @Override
-    public Boolean validateISBN(String isbn) {
-        String regex = "^(?=(?:\\D\\d){10}(?:(?:\\D\\d){3})?$)[\\d-]+$";
-        
-        return isbn.matches(regex);
+    public Boolean validateISBN(String isbn) throws Exception {
+        if (isbn.matches("^(?=(?:\\D\\d){10}(?:(?:\\D\\d){3})?$)[\\d-]+$")) throw new Exception();
+        return true;
     }
 }

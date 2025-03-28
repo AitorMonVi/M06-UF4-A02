@@ -17,6 +17,7 @@
                     <th>Editorial</th>
                     <th>Data d'edició</th>
                     <th>Temàtica</th>
+                    <th>ISBN</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,12 +25,13 @@
                     <td colspan="2">No hi ha llibres disponibles</td>
                 </tr>
                 <tr th:each="llibre:${llibres}">
-                    <td><span th:text="${llibre.idLlibre}"></span></td>
+                    <td><span th:text="${llibre.id_Llibre}"></span></td>
                     <td><span th:text="${llibre.titol}"></span></td>
                     <td><span th:text="${llibre.autor}"></span></td>
                     <td><span th:text="${llibre.editorial}"></span></td>
                     <td><span th:text="${llibre.datapublicacio}"></span></td>
                     <td><span th:text="${llibre.tematica}"></span></td>
+                    <td><span th:text="${llibre.ISBN}"></span></td>
                 </tr>
             </tbody>
         </table>

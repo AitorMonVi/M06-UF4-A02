@@ -14,5 +14,5 @@ public interface LlibreService {
 
     // unique from service
     Optional<Llibre> findByIdLlibre(int id_Llibre) throws Exception;
-    Boolean validateISBN(String ISBN);
+    Boolean validateISBN(String ISBN) throws Exception;
 }
